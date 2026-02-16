@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+body {
+  font-family: "toppan-bunkyu-gothic-pr6n", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-feature-settings: 'palt' 1; /* 自動文字詰め */
+  color: var(--text-black); /* 真っ黒だとコントラストつきすぎて目が痛いので */
+  background-color: var(--main-bg-color) /* 背景色は適宜変更すること */
+}
+
+:root{
+  --main-bg-color: #F4EEE9;
+  --footer-bg-color: #484542;
+  --page-white: #C2C2C2;
+  --text-black: #4D4D4D;
+  --site-margin: 8vw;
+}
+
+/*=======================================================
+header
+=======================================================*/
+
+header{
+  z-index: 999;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  background-color: #f7f7f7;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo_box{
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .icon{
+  width: 40px;
+  margin-right: 20px;
+}
+
+header .links{
+  width: 36vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a{
+  font-size: 20px;
+  letter-spacing: 0.1em;
+}
+
+section{
+  padding: 170px var(--site-margin) 0;
+}
+
+
+.first_view img{
+  width: 100%;
+}
+
+h1{
+  font-size: 40px;
+  transform: scale(1,0.85);
+  letter-spacing: 0.03em;
+}
+
+.description_text{
+    font-size: 16px;
+    margin-top: 30px;
+    letter-spacing: 0.1em;
+    line-height: 2.3em;
+  }
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a {
+  transition: transform 1s 0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover {
+  transform: scale(1.1);
+}
+
+/*----------------------------------------*
+ about
+*----------------------------------------*/
+#about{
+
+  h1{
+    margin: 100px 0 100px 0;
+  }
+
+  .about_textbox{
+    width: 30vw;
+  }
+
+  .ohori_shape{
+    position: relative;
+    bottom: 30px;
+    width: 20vw;
+    margin-left: 20vw;
+  }
+
+  .about_pic{
+    width: 35vw;
+  }
+
+}
+
+/*----------------------------------------*
+ spot
+*----------------------------------------*/
+#spot{
+
+  .contents{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .contents:nth-child(odd){
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .contents:nth-child(even){
+    width: 100%;
+    flex-direction: row-reverse;
+  }
+
+  .contents .description_box{
+    width: 30vw;
+  }
+
+  .contents .contents_pic{
+    width: 50vw;
+  }
+
+  .title_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title_jp{
+    /* font-family: "gothic-a1", sans-serif;
+    font-weight: 300;
+    font-style: normal; */
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .title_en{
+    /* font-family: "gothic-a1", sans-serif;
+    font-weight: 300;
+    font-style: normal; */
+    font-size: 20px;
+  }
+
+}
+
+/*----------------------------------------*
+ access
+*----------------------------------------*/
+
+iframe{
+  margin-top: 40px;
+  width: 100%;
+}
+
+/*----------------------------------------*
+ news
+*----------------------------------------*/
+#news {
+
+  .contents{
+    width: 34vw;
+    padding: 20px;
+    border-right: 0.5px solid;
+  }
+
+  .contents:last-child{
+    border: none;
+  }
+
+  .contents img{
+    width: 100%;
+  }
+
+  .news_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+
+  .contents .tag_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .contents .title{
+    margin: 15px 0 30px 0;
+  }
+
+  .contents .desctription_text {
+    font-size: 16px;
+  }
+
+  .title{
+    font-size: 24px;
+  }
+
+}
+
+/*----------------------------------------*
+ footer
+*----------------------------------------*/
+footer{
+  color: var(--page-white);
+  background-color: var(--footer-bg-color);
+  padding: 50px var(--site-margin);
+}
+
+footer p{
+  font-size: 14px;
+  text-align: right;
+  margin-top: 50px;
+}
+
+footer .logo{
+  color: var(--main-bg-color);
+  margin-top: 16px;
+  width: 20vw;
+}
+
+footer .footer_pic{
+  width: 50vw;
+}
+
+/*----------------------------------------*
+ max-width
+*----------------------------------------*/
+
+@media screen and (max-width: 768px) {
+
+  header .links{
+    display: none;
+  }
+
+  #about{
+
+    .flex{
+      flex-direction: column;
+    }
+
+
+    .about_textbox{
+      width: 100%;
+    }
+
+    .ohori_shape{
+    width: 30vw;
+    bottom: 300px;
+    margin-left: 48vw;
+    }
+
+
+    .about_pic{
+      width: 100%;
+    }
+  }
+
+  #spot{
+
+    .contents:nth-child(odd) {
+      flex-direction: column;
+    }
+
+    .contents:nth-child(even) {
+      flex-direction: column;
+    }
+
+    .contents .description_box{
+      width: 100%;
+    }
+
+    .contents .contents_pic{
+      width: 100%;
+    }
+  }
+}
